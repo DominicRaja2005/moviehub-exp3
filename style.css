@@ -1,0 +1,233 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.website-title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-box button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+
+.welcome-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.welcome-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.welcome-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-around; /* Distribute items with space around them */
+    gap: 20px; /* Space between gallery items */
+    padding: 20px;
+    background-color: #eee;
+}
+
+.gallery-item {
+    flex: 1; /* Allows items to grow and shrink */
+    min-width: 250px; /* Minimum width for each item before wrapping */
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex; /* Use flexbox for caption positioning */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-end; /* Align caption to the bottom by default */
+    cursor: pointer;
+}
+
+.gallery-item:nth-child(even) {
+    align-items: flex-start; /* Example: Align even items to the top */
+}
+
+.gallery-item:nth-child(3n) {
+    align-items: center; /* Example: Align every third item to the center */
+}
+
+
+.caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0.9; /* Apply opacity */
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .caption {
+    opacity: 1;
+}
+
+.content-section {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.content-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+.content-block:last-child {
+    margin-bottom: 0;
+}
+
+.content-block img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.9; /* Apply opacity */
+}
+
+.content-block .text-content {
+    flex: 1;
+}
+
+.content-block .text-content h3 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.content-block .text-content p {
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+
+/* Alternating layout for content blocks */
+.content-block.reverse {
+    flex-direction: row-reverse;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .website-title {
+        margin-bottom: 10px;
+    }
+
+    .search-box {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .search-box input {
+        width: 70%;
+    }
+
+    .gallery-item {
+        min-width: 45%; /* Two columns on smaller screens */
+        flex-basis: auto; /* Allow flex to calculate size */
+    }
+
+    .content-block {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-block img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .content-block.reverse {
+        flex-direction: column; /* Revert to column for reverse on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .website-title {
+        font-size: 1.5em;
+    }
+
+    .search-box input, .search-box button {
+        padding: 6px;
+    }
+
+    .welcome-section h2 {
+        font-size: 1.8em;
+    }
+
+    .gallery-item {
+        min-width: 90%; /* Single column on very small screens */
+    }
+
+    .content-block img {
+        max-width: 100%;
+    }
+}
